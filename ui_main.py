@@ -492,8 +492,6 @@ class Ui_MainWindow(object):
 "QTableView::item {\n"
 "    border-style: none;\n"
 "    border-bottom: 1px solid rgba(255,255,255,50);\n"
-"    padding-left: auto;\n"
-"    padding-right: auto;\n"
 "}\n"
 "\n"
 "QTableView::item:selected{\n"
@@ -507,7 +505,7 @@ class Ui_MainWindow(object):
         self.tableView.setTextElideMode(Qt.ElideRight)
         self.tableView.setShowGrid(False)
         self.tableView.setSortingEnabled(True)
-        self.tableView.horizontalHeader().setDefaultSectionSize(155)
+        self.tableView.horizontalHeader().setDefaultSectionSize(130)
         self.tableView.verticalHeader().setVisible(False)
 
         self.verticalLayout_2.addWidget(self.tableView)
