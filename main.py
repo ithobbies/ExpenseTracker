@@ -18,7 +18,7 @@ class ExpenseTracker(QMainWindow):
         self.view_data()
         self.ui.btn_new_transaction.clicked.connect(self.open_new_transaction_window)
         self.ui.btn_edit_transaction.clicked.connect(self.open_new_transaction_window)
-        self.ui.btn_delete_transaction.clicked.connect(self.select_current_row)
+        self.ui.btn_delete_transaction.clicked.connect(self.delete_current_transaction)
         self.ui.current_balance.setText(self.conn.total_balance())
 
     def view_data(self):
@@ -33,8 +33,10 @@ class ExpenseTracker(QMainWindow):
         self.ui_window.setupUi(self.new_window)
         self.new_window.show()
         sender = self.sender()
-        print(sender)
-
+        if sender.text() == "New transaction":
+            self.ui_window.btn_new_transaction.clicked.connect(self.add_new_transaction)
+        else:
+            self.ui_window.btn_new_transaction.clicked.connect(self.edit_current_transaction)
 
     def add_new_transaction(self):
         date = self.ui_window.dateEdit.text()
@@ -42,19 +44,31 @@ class ExpenseTracker(QMainWindow):
         description = self.ui_window.le_description.text()
         balance = self.ui_window.le_balance.text()
         status = self.ui_window.cb_status.currentText()
-        self.ui_window.btn_new_transaction.clicked.connect(
-            self.conn.add_new_transaction_query(date, category, description,
-                                                balance, status))
+
+        self.conn.add_new_transaction_query(date, category, description, balance, status)
         self.view_data()
         self.new_window.close()
 
     def edit_current_transaction(self):
-        pass
-
-    def select_current_row(self):
         index = self.ui.tableView.selectedIndexes()[0]
-        id_us = int(self.ui.tableView.model().data(index))
-        return str(id_us)
+        id = str(self.ui.tableView.model().data(index))
+
+        date = self.ui_window.dateEdit.text()
+        category = self.ui_window.cb_choose_category.currentText()
+        description = self.ui_window.le_description.text()
+        balance = self.ui_window.le_balance.text()
+        status = self.ui_window.cb_status.currentText()
+
+        self.conn.update_transaction_query(date, category, description, balance, status, id)
+        self.view_data()
+        self.new_window.close()
+
+    def delete_current_transaction(self):
+        index = self.ui.tableView.selectedIndexes()[0]
+        id = str(self.ui.tableView.model().data(index))
+
+        self.conn.delete_transaction_query(id)
+        self.view_data()
 
 
 if __name__ == "__main__":

@@ -34,14 +34,19 @@ class Data:
         query.addBindValue(status)
         query.exec()
 
-    def update_transaction_query(self, date, category, description, balance, status):
+    def update_transaction_query(self, date, category, description, balance, status, id):
         query = QtSql.QSqlQuery()
-        query.exec("UPDATE expenses SET Date=?, Category=?, Description=?, Balance=?, Status=? WHERE ID=1")
+        query.exec("UPDATE expenses SET Date=?, Category=?, Description=?, Balance=?, Status=? WHERE ID='%s'" % id)
         query.addBindValue(date)
         query.addBindValue(category)
         query.addBindValue(description)
         query.addBindValue(balance)
         query.addBindValue(status)
+        query.exec()
+
+    def delete_transaction_query(self, id):
+        query = QtSql.QSqlQuery()
+        query.exec("DELETE FROM expenses WHERE ID='%s'" % id)
         query.exec()
 
     def total_balance(self):
