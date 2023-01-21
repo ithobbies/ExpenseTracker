@@ -177,6 +177,6 @@ class Ui_Dialog(object):
         self.cb_status.setItemText(1, QCoreApplication.translate("Dialog", u"Outcome", None))
 
         self.cb_status.setPlaceholderText(QCoreApplication.translate("Dialog", u"Choose status", None))
-        self.btn_new_transaction.setText(QCoreApplication.translate("Dialog", u"Save new transaction", None))
+        self.btn_new_transaction.setText(QCoreApplication.translate("Dialog", u"Save transaction", None))
     # retranslateUi
 

@@ -1,9 +1,11 @@
 import sys
 
+from PySide6 import QtWidgets
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtSql import QSqlTableModel
 
 from ui_main import Ui_MainWindow
+from new_transaction import Ui_Dialog
 from connection import Data
 
 
@@ -14,7 +16,9 @@ class ExpenseTracker(QMainWindow):
         self.ui.setupUi(self)
         self.conn = Data()
         self.view_data()
-        self.ui.btn_new_transaction.clicked.connect(self.conn.open_new_transaction)
+        self.ui.btn_new_transaction.clicked.connect(self.open_new_transaction_window)
+        self.ui.btn_edit_transaction.clicked.connect(self.open_new_transaction_window)
+        self.ui.btn_delete_transaction.clicked.connect(self.select_current_row)
         self.ui.current_balance.setText(self.conn.total_balance())
 
     def view_data(self):
@@ -22,6 +26,35 @@ class ExpenseTracker(QMainWindow):
         self.model.setTable('expenses')
         self.model.select()
         self.ui.tableView.setModel(self.model)
+
+    def open_new_transaction_window(self):
+        self.new_window = QtWidgets.QDialog()
+        self.ui_window = Ui_Dialog()
+        self.ui_window.setupUi(self.new_window)
+        self.new_window.show()
+        sender = self.sender()
+        print(sender)
+
+
+    def add_new_transaction(self):
+        date = self.ui_window.dateEdit.text()
+        category = self.ui_window.cb_choose_category.currentText()
+        description = self.ui_window.le_description.text()
+        balance = self.ui_window.le_balance.text()
+        status = self.ui_window.cb_status.currentText()
+        self.ui_window.btn_new_transaction.clicked.connect(
+            self.conn.add_new_transaction_query(date, category, description,
+                                                balance, status))
+        self.view_data()
+        self.new_window.close()
+
+    def edit_current_transaction(self):
+        pass
+
+    def select_current_row(self):
+        index = self.ui.tableView.selectedIndexes()[0]
+        id_us = int(self.ui.tableView.model().data(index))
+        return str(id_us)
 
 
 if __name__ == "__main__":

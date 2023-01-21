@@ -1,5 +1,4 @@
 from PySide6 import QtWidgets, QtSql
-from new_transaction import Ui_Dialog
 
 
 class Data:
@@ -25,21 +24,24 @@ class Data:
                                                              Status VARCHAR(20))""")
         return True
 
-    def open_new_transaction(self):
-        self.window = QtWidgets.QDialog()
-        self.ui = Ui_Dialog()
-        self.ui.setupUi(self.window)
-        self.window.show()
-        self.ui.btn_new_transaction.clicked.connect(self.add_new_transaction)
-
-    def add_new_transaction(self):
+    def add_new_transaction_query(self, date, category, description, balance, status):
         query = QtSql.QSqlQuery()
         query.prepare("INSERT INTO expenses (Date, Category, Description, Balance, Status) VALUES (?, ?, ?, ?, ?)")
-        query.addBindValue(self.ui.dateEdit.text())
-        query.addBindValue(self.ui.cb_choose_category.currentText())
-        query.addBindValue(self.ui.le_description.text())
-        query.addBindValue(self.ui.le_balance.text())
-        query.addBindValue(self.ui.cb_status.currentText())
+        query.addBindValue(date)
+        query.addBindValue(category)
+        query.addBindValue(description)
+        query.addBindValue(balance)
+        query.addBindValue(status)
+        query.exec()
+
+    def update_transaction_query(self, date, category, description, balance, status):
+        query = QtSql.QSqlQuery()
+        query.exec("UPDATE expenses SET Date=?, Category=?, Description=?, Balance=?, Status=? WHERE ID=1")
+        query.addBindValue(date)
+        query.addBindValue(category)
+        query.addBindValue(description)
+        query.addBindValue(balance)
+        query.addBindValue(status)
         query.exec()
 
     def total_balance(self):
