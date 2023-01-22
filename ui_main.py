@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'untitled.ui'
+## Form generated from reading UI file 'ui_main.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(803, 673)
         MainWindow.setMinimumSize(QSize(800, 600))
         font = QFont()
         font.setFamilies([u"Noto Sans SC"])
@@ -202,175 +202,175 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.label_25 = QLabel(self.balances_frame_2)
-        self.label_25.setObjectName(u"label_25")
+        self.icon_groceries = QLabel(self.balances_frame_2)
+        self.icon_groceries.setObjectName(u"icon_groceries")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_25.sizePolicy().hasHeightForWidth())
-        self.label_25.setSizePolicy(sizePolicy)
-        self.label_25.setMaximumSize(QSize(24, 16777215))
+        sizePolicy.setHeightForWidth(self.icon_groceries.sizePolicy().hasHeightForWidth())
+        self.icon_groceries.setSizePolicy(sizePolicy)
+        self.icon_groceries.setMaximumSize(QSize(24, 16777215))
         font5 = QFont()
         font5.setFamilies([u"Noto Sans SC"])
         font5.setPointSize(14)
         font5.setBold(True)
-        self.label_25.setFont(font5)
-        self.label_25.setStyleSheet(u"color: white;\n"
+        self.icon_groceries.setFont(font5)
+        self.icon_groceries.setStyleSheet(u"color: white;\n"
 "font-weight: bold;\n"
 "font-size: 14pt;\n"
 "background-color: none;\n"
 "border: none;")
-        self.label_25.setPixmap(QPixmap(u":/icons/icons/local_grocery_store_white_24dp.svg"))
+        self.icon_groceries.setPixmap(QPixmap(u":/icons/icons/local_grocery_store_white_24dp.svg"))
 
-        self.horizontalLayout_3.addWidget(self.label_25)
+        self.horizontalLayout_3.addWidget(self.icon_groceries)
 
-        self.label_26 = QLabel(self.balances_frame_2)
-        self.label_26.setObjectName(u"label_26")
-        self.label_26.setFont(font5)
-        self.label_26.setStyleSheet(u"color: white;\n"
+        self.lbl_groceries = QLabel(self.balances_frame_2)
+        self.lbl_groceries.setObjectName(u"lbl_groceries")
+        self.lbl_groceries.setFont(font5)
+        self.lbl_groceries.setStyleSheet(u"color: white;\n"
 "font-weight: bold;\n"
 "font-size: 14pt;\n"
 "background-color: none;\n"
 "border: none;")
 
-        self.horizontalLayout_3.addWidget(self.label_26)
+        self.horizontalLayout_3.addWidget(self.lbl_groceries)
 
-        self.label_16 = QLabel(self.balances_frame_2)
-        self.label_16.setObjectName(u"label_16")
+        self.total_groceries = QLabel(self.balances_frame_2)
+        self.total_groceries.setObjectName(u"total_groceries")
         font6 = QFont()
         font6.setFamilies([u"Noto Sans SC"])
         font6.setPointSize(16)
         font6.setBold(False)
         font6.setItalic(False)
         font6.setKerning(True)
-        self.label_16.setFont(font6)
-        self.label_16.setStyleSheet(u"color: white;\n"
+        self.total_groceries.setFont(font6)
+        self.total_groceries.setStyleSheet(u"color: white;\n"
 "font-size: 16pt;\n"
 "background-color: none;\n"
 "border: none;")
-        self.label_16.setLineWidth(0)
+        self.total_groceries.setLineWidth(0)
 
-        self.horizontalLayout_3.addWidget(self.label_16)
+        self.horizontalLayout_3.addWidget(self.total_groceries)
 
 
         self.verticalLayout_20.addLayout(self.horizontalLayout_3)
 
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.label_27 = QLabel(self.balances_frame_2)
-        self.label_27.setObjectName(u"label_27")
-        self.label_27.setMaximumSize(QSize(24, 16777215))
-        self.label_27.setFont(font5)
-        self.label_27.setStyleSheet(u"color: white;\n"
+        self.icon_entertainment = QLabel(self.balances_frame_2)
+        self.icon_entertainment.setObjectName(u"icon_entertainment")
+        self.icon_entertainment.setMaximumSize(QSize(24, 16777215))
+        self.icon_entertainment.setFont(font5)
+        self.icon_entertainment.setStyleSheet(u"color: white;\n"
 "font-weight: bold;\n"
 "font-size: 14pt;\n"
 "background-color: none;\n"
 "border: none;")
-        self.label_27.setPixmap(QPixmap(u":/icons/icons/sports_esports_white_24dp.svg"))
+        self.icon_entertainment.setPixmap(QPixmap(u":/icons/icons/sports_esports_white_24dp.svg"))
 
-        self.horizontalLayout_4.addWidget(self.label_27)
+        self.horizontalLayout_4.addWidget(self.icon_entertainment)
 
-        self.label_28 = QLabel(self.balances_frame_2)
-        self.label_28.setObjectName(u"label_28")
-        self.label_28.setFont(font5)
-        self.label_28.setStyleSheet(u"color: white;\n"
+        self.lbl_entertainment = QLabel(self.balances_frame_2)
+        self.lbl_entertainment.setObjectName(u"lbl_entertainment")
+        self.lbl_entertainment.setFont(font5)
+        self.lbl_entertainment.setStyleSheet(u"color: white;\n"
 "font-weight: bold;\n"
 "font-size: 14pt;\n"
 "background-color: none;\n"
 "border: none;")
 
-        self.horizontalLayout_4.addWidget(self.label_28)
+        self.horizontalLayout_4.addWidget(self.lbl_entertainment)
 
-        self.label_18 = QLabel(self.balances_frame_2)
-        self.label_18.setObjectName(u"label_18")
-        self.label_18.setFont(font6)
-        self.label_18.setStyleSheet(u"color: white;\n"
+        self.total_entertainment = QLabel(self.balances_frame_2)
+        self.total_entertainment.setObjectName(u"total_entertainment")
+        self.total_entertainment.setFont(font6)
+        self.total_entertainment.setStyleSheet(u"color: white;\n"
 "font-size: 16pt;\n"
 "background-color: none;\n"
 "border: none;")
-        self.label_18.setLineWidth(0)
+        self.total_entertainment.setLineWidth(0)
 
-        self.horizontalLayout_4.addWidget(self.label_18)
+        self.horizontalLayout_4.addWidget(self.total_entertainment)
 
 
         self.verticalLayout_20.addLayout(self.horizontalLayout_4)
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.label_29 = QLabel(self.balances_frame_2)
-        self.label_29.setObjectName(u"label_29")
-        self.label_29.setMaximumSize(QSize(24, 16777215))
-        self.label_29.setFont(font5)
-        self.label_29.setStyleSheet(u"color: white;\n"
+        self.icon_auto = QLabel(self.balances_frame_2)
+        self.icon_auto.setObjectName(u"icon_auto")
+        self.icon_auto.setMaximumSize(QSize(24, 16777215))
+        self.icon_auto.setFont(font5)
+        self.icon_auto.setStyleSheet(u"color: white;\n"
 "font-weight: bold;\n"
 "font-size: 14pt;\n"
 "background-color: none;\n"
 "border: none;")
-        self.label_29.setPixmap(QPixmap(u":/icons/icons/directions_car_white_24dp.svg"))
+        self.icon_auto.setPixmap(QPixmap(u":/icons/icons/directions_car_white_24dp.svg"))
 
-        self.horizontalLayout_5.addWidget(self.label_29)
+        self.horizontalLayout_5.addWidget(self.icon_auto)
 
-        self.label_30 = QLabel(self.balances_frame_2)
-        self.label_30.setObjectName(u"label_30")
-        self.label_30.setFont(font5)
-        self.label_30.setStyleSheet(u"color: white;\n"
+        self.lbl_auto = QLabel(self.balances_frame_2)
+        self.lbl_auto.setObjectName(u"lbl_auto")
+        self.lbl_auto.setFont(font5)
+        self.lbl_auto.setStyleSheet(u"color: white;\n"
 "font-weight: bold;\n"
 "font-size: 14pt;\n"
 "background-color: none;\n"
 "border: none;")
 
-        self.horizontalLayout_5.addWidget(self.label_30)
+        self.horizontalLayout_5.addWidget(self.lbl_auto)
 
-        self.label_20 = QLabel(self.balances_frame_2)
-        self.label_20.setObjectName(u"label_20")
-        self.label_20.setFont(font6)
-        self.label_20.setStyleSheet(u"color: white;\n"
+        self.total_auto = QLabel(self.balances_frame_2)
+        self.total_auto.setObjectName(u"total_auto")
+        self.total_auto.setFont(font6)
+        self.total_auto.setStyleSheet(u"color: white;\n"
 "font-size: 16pt;\n"
 "background-color: none;\n"
 "border: none;")
-        self.label_20.setLineWidth(0)
+        self.total_auto.setLineWidth(0)
 
-        self.horizontalLayout_5.addWidget(self.label_20)
+        self.horizontalLayout_5.addWidget(self.total_auto)
 
 
         self.verticalLayout_20.addLayout(self.horizontalLayout_5)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.label_31 = QLabel(self.balances_frame_2)
-        self.label_31.setObjectName(u"label_31")
-        self.label_31.setMaximumSize(QSize(24, 16777215))
-        self.label_31.setFont(font5)
-        self.label_31.setStyleSheet(u"color: white;\n"
+        self.icon_other = QLabel(self.balances_frame_2)
+        self.icon_other.setObjectName(u"icon_other")
+        self.icon_other.setMaximumSize(QSize(24, 16777215))
+        self.icon_other.setFont(font5)
+        self.icon_other.setStyleSheet(u"color: white;\n"
 "font-weight: bold;\n"
 "font-size: 14pt;\n"
 "background-color: none;\n"
 "border: none;")
-        self.label_31.setPixmap(QPixmap(u":/icons/icons/list_white_24dp.svg"))
+        self.icon_other.setPixmap(QPixmap(u":/icons/icons/list_white_24dp.svg"))
 
-        self.horizontalLayout_6.addWidget(self.label_31)
+        self.horizontalLayout_6.addWidget(self.icon_other)
 
-        self.label_32 = QLabel(self.balances_frame_2)
-        self.label_32.setObjectName(u"label_32")
-        self.label_32.setFont(font5)
-        self.label_32.setStyleSheet(u"color: white;\n"
+        self.lbl_other = QLabel(self.balances_frame_2)
+        self.lbl_other.setObjectName(u"lbl_other")
+        self.lbl_other.setFont(font5)
+        self.lbl_other.setStyleSheet(u"color: white;\n"
 "font-weight: bold;\n"
 "font-size: 14pt;\n"
 "background-color: none;\n"
 "border: none;")
 
-        self.horizontalLayout_6.addWidget(self.label_32)
+        self.horizontalLayout_6.addWidget(self.lbl_other)
 
-        self.label_21 = QLabel(self.balances_frame_2)
-        self.label_21.setObjectName(u"label_21")
-        self.label_21.setFont(font6)
-        self.label_21.setStyleSheet(u"color: white;\n"
+        self.total_other = QLabel(self.balances_frame_2)
+        self.total_other.setObjectName(u"total_other")
+        self.total_other.setFont(font6)
+        self.total_other.setStyleSheet(u"color: white;\n"
 "font-size: 16pt;\n"
 "background-color: none;\n"
 "border: none;")
-        self.label_21.setLineWidth(0)
+        self.total_other.setLineWidth(0)
 
-        self.horizontalLayout_6.addWidget(self.label_21)
+        self.horizontalLayout_6.addWidget(self.total_other)
 
 
         self.verticalLayout_20.addLayout(self.horizontalLayout_6)
@@ -505,7 +505,7 @@ class Ui_MainWindow(object):
         self.tableView.setTextElideMode(Qt.ElideRight)
         self.tableView.setShowGrid(False)
         self.tableView.setSortingEnabled(True)
-        self.tableView.horizontalHeader().setDefaultSectionSize(130)
+        self.tableView.horizontalHeader().setDefaultSectionSize(135)
         self.tableView.verticalHeader().setVisible(False)
 
         self.verticalLayout_2.addWidget(self.tableView)
@@ -528,18 +528,18 @@ class Ui_MainWindow(object):
         self.lbl_outcome.setText(QCoreApplication.translate("MainWindow", u"Outcome", None))
         self.outcome_balance.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
         self.lbl_expenses_categories.setText(QCoreApplication.translate("MainWindow", u"Expenses categories", None))
-        self.label_25.setText("")
-        self.label_26.setText(QCoreApplication.translate("MainWindow", u"Groceries", None))
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
-        self.label_27.setText("")
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"Entertainment", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
-        self.label_29.setText("")
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
-        self.label_31.setText("")
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"Other", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
+        self.icon_groceries.setText("")
+        self.lbl_groceries.setText(QCoreApplication.translate("MainWindow", u"Groceries", None))
+        self.total_groceries.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
+        self.icon_entertainment.setText("")
+        self.lbl_entertainment.setText(QCoreApplication.translate("MainWindow", u"Entertainment", None))
+        self.total_entertainment.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
+        self.icon_auto.setText("")
+        self.lbl_auto.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
+        self.total_auto.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
+        self.icon_other.setText("")
+        self.lbl_other.setText(QCoreApplication.translate("MainWindow", u"Other", None))
+        self.total_other.setText(QCoreApplication.translate("MainWindow", u"$3235,50", None))
         self.btn_new_transaction.setText(QCoreApplication.translate("MainWindow", u"New transaction", None))
         self.btn_delete_transaction.setText(QCoreApplication.translate("MainWindow", u"Delete transaction", None))
         self.btn_edit_transaction.setText(QCoreApplication.translate("MainWindow", u"Edit transaction", None))

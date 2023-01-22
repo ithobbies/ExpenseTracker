@@ -16,10 +16,18 @@ class ExpenseTracker(QMainWindow):
         self.ui.setupUi(self)
         self.conn = Data()
         self.view_data()
+
         self.ui.btn_new_transaction.clicked.connect(self.open_new_transaction_window)
         self.ui.btn_edit_transaction.clicked.connect(self.open_new_transaction_window)
         self.ui.btn_delete_transaction.clicked.connect(self.delete_current_transaction)
+
         self.ui.current_balance.setText(self.conn.total_balance())
+        self.ui.income_balance.setText(self.conn.total_income())
+        self.ui.outcome_balance.setText(self.conn.total_outcome())
+        self.ui.total_groceries.setText(self.conn.total_groceries())
+        self.ui.total_auto.setText(self.conn.total_auto())
+        self.ui.total_entertainment.setText(self.conn.total_entertainment())
+        self.ui.total_other.setText(self.conn.total_other())
 
     def view_data(self):
         self.model = QSqlTableModel(self)

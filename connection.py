@@ -54,6 +54,60 @@ class Data:
         query.exec("SELECT SUM(Balance) FROM expenses")
 
         if query.next():
-            return str(query.value(0))
+            return str(query.value(0)) + '$'
 
-        return -1
+        return '0'
+
+    def total_income(self):
+        query = QtSql.QSqlQuery()
+        query.exec("SELECT SUM(Balance) FROM expenses WHERE Status='Income'")
+
+        if query.next():
+            return str(query.value(0)) + '$'
+
+        return '0'
+
+    def total_outcome(self):
+        query = QtSql.QSqlQuery()
+        query.exec("SELECT SUM(Balance) FROM expenses WHERE Status='Outcome'")
+
+        if query.next():
+            return str(query.value(0)) + '$'
+
+        return '0'
+
+    def total_groceries(self):
+        query = QtSql.QSqlQuery()
+        query.exec("SELECT SUM(Balance) FROM expenses WHERE Category='Grocery'")
+
+        if query.next():
+            return str(query.value(0)) + '$'
+
+        return '0'
+
+    def total_auto(self):
+        query = QtSql.QSqlQuery()
+        query.exec("SELECT SUM(Balance) FROM expenses WHERE Category='Auto'")
+
+        if query.next():
+            return str(query.value(0)) + '$'
+
+        return '0'
+
+    def total_entertainment(self):
+        query = QtSql.QSqlQuery()
+        query.exec("SELECT SUM(Balance) FROM expenses WHERE Category='Entertainment'")
+
+        if query.next():
+            return str(query.value(0)) + '$'
+
+        return '0'
+
+    def total_other(self):
+        query = QtSql.QSqlQuery()
+        query.exec("SELECT SUM(Balance) FROM expenses WHERE Category='Other'")
+
+        if query.next():
+            return str(query.value(0)) + '$'
+
+        return '0'

@@ -328,7 +328,7 @@ border: none;</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QLabel" name="label_25">
+            <widget class="QLabel" name="icon_groceries">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
@@ -364,7 +364,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_26">
+            <widget class="QLabel" name="lbl_groceries">
              <property name="font">
               <font>
                <family>Noto Sans SC</family>
@@ -385,7 +385,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_16">
+            <widget class="QLabel" name="total_groceries">
              <property name="font">
               <font>
                <family>Noto Sans SC</family>
@@ -414,7 +414,7 @@ border: none;</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QLabel" name="label_27">
+            <widget class="QLabel" name="icon_entertainment">
              <property name="maximumSize">
               <size>
                <width>24</width>
@@ -444,7 +444,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_28">
+            <widget class="QLabel" name="lbl_entertainment">
              <property name="font">
               <font>
                <family>Noto Sans SC</family>
@@ -465,7 +465,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_18">
+            <widget class="QLabel" name="total_entertainment">
              <property name="font">
               <font>
                <family>Noto Sans SC</family>
@@ -494,7 +494,7 @@ border: none;</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
-            <widget class="QLabel" name="label_29">
+            <widget class="QLabel" name="icon_auto">
              <property name="maximumSize">
               <size>
                <width>24</width>
@@ -524,7 +524,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_30">
+            <widget class="QLabel" name="lbl_auto">
              <property name="font">
               <font>
                <family>Noto Sans SC</family>
@@ -545,7 +545,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_20">
+            <widget class="QLabel" name="total_auto">
              <property name="font">
               <font>
                <family>Noto Sans SC</family>
@@ -574,7 +574,7 @@ border: none;</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_6">
            <item>
-            <widget class="QLabel" name="label_31">
+            <widget class="QLabel" name="icon_other">
              <property name="maximumSize">
               <size>
                <width>24</width>
@@ -604,7 +604,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_32">
+            <widget class="QLabel" name="lbl_other">
              <property name="font">
               <font>
                <family>Noto Sans SC</family>
@@ -625,7 +625,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_21">
+            <widget class="QLabel" name="total_other">
              <property name="font">
               <font>
                <family>Noto Sans SC</family>
