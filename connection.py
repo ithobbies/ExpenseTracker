@@ -1,5 +1,6 @@
 from PySide6 import QtWidgets, QtSql
 
+
 class Data:
     def __init__(self):
         super(Data, self).__init__()
@@ -42,14 +43,14 @@ class Data:
         self.execute_query(sql_query, [id])
 
     def get_total(self, column, filter=None, value=None):
-        sql_query = f"SELECT SUM(Balance) FROM expenses WHERE {column} = ?"
+        sql_query = f"SELECT SUM({column}) FROM expenses"
 
         if filter is not None and value is not None:
-            sql_query += f" AND {filter} = ?"
+            sql_query += f" WHERE {filter} = ?"
 
-        query_values = [value]
+        query_values = []
 
-        if filter is not None and value is not None:
+        if value is not None:
             query_values.append(value)
 
         query = QtSql.QSqlQuery()
@@ -66,22 +67,22 @@ class Data:
         return '0'
 
     def total_balance(self):
-        return self.get_total(column="1")
+        return self.get_total(column="Balance")
 
     def total_income(self):
-        return self.get_total(column="Status", filter="Status", value="Income")
+        return self.get_total(column="Balance", filter="Status", value="Income")
 
     def total_outcome(self):
-        return self.get_total(column="Status", filter="Status", value="Outcome")
+        return self.get_total(column="Balance", filter="Status", value="Outcome")
 
     def total_groceries(self):
-        return self.get_total(column="Category", filter="Category", value="Grocery")
+        return self.get_total(column="Balance", filter="Category", value="Grocery")
 
     def total_auto(self):
-        return self.get_total(column="Category", filter="Category", value="Auto")
+        return self.get_total(column="Balance", filter="Category", value="Auto")
 
     def total_entertainment(self):
-        return self.get_total(column="Category", filter="Category", value="Entertainment")
+        return self.get_total(column="Balance", filter="Category", value="Entertainment")
 
     def total_other(self):
-        return self.get_total(column="Category", filter="Category", value="Other")
+        return self.get_total(column="Balance", filter="Category", value="Other")
