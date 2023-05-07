@@ -20,27 +20,29 @@ class Data:
                    "Category VARCHAR(20), Description VARCHAR(20), Balance REAL, Status VARCHAR(20))")
         return True
 
-    def execute_query(self, sql_query, values=None):
+    def execute_query_with_params(self, sql_query, query_values=None):
         query = QtSql.QSqlQuery()
         query.prepare(sql_query)
 
-        if values is not None:
-            for value in values:
-                query.addBindValue(value)
+        if query_values is not None:
+            for query_value in query_values:
+                query.addBindValue(query_value)
 
         query.exec()
 
+        return query
+
     def add_new_transaction_query(self, date, category, description, balance, status):
         sql_query = "INSERT INTO expenses (Date, Category, Description, Balance, Status) VALUES (?, ?, ?, ?, ?)"
-        self.execute_query(sql_query, [date, category, description, balance, status])
+        self.execute_query_with_params(sql_query, [date, category, description, balance, status])
 
     def update_transaction_query(self, date, category, description, balance, status, id):
         sql_query = "UPDATE expenses SET Date=?, Category=?, Description=?, Balance=?, Status=? WHERE ID=?"
-        self.execute_query(sql_query, [date, category, description, balance, status, id])
+        self.execute_query_with_params(sql_query, [date, category, description, balance, status, id])
 
     def delete_transaction_query(self, id):
         sql_query = "DELETE FROM expenses WHERE ID=?"
-        self.execute_query(sql_query, [id])
+        self.execute_query_with_params(sql_query, [id])
 
     def get_total(self, column, filter=None, value=None):
         sql_query = f"SELECT SUM({column}) FROM expenses"
@@ -53,13 +55,7 @@ class Data:
         if value is not None:
             query_values.append(value)
 
-        query = QtSql.QSqlQuery()
-        query.prepare(sql_query)
-
-        for query_value in query_values:
-            query.addBindValue(query_value)
-
-        query.exec()
+        query = self.execute_query_with_params(sql_query, query_values)
 
         if query.next():
             return str(query.value(0)) + '$'
