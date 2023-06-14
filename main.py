@@ -16,11 +16,13 @@ class ExpenseTracker(QMainWindow):
         self.ui.setupUi(self)
         self.conn = Data()
         self.view_data()
+        self.reload_data()
 
         self.ui.btn_new_transaction.clicked.connect(self.open_new_transaction_window)
         self.ui.btn_edit_transaction.clicked.connect(self.open_new_transaction_window)
         self.ui.btn_delete_transaction.clicked.connect(self.delete_current_transaction)
 
+    def reload_data(self):
         self.ui.current_balance.setText(self.conn.total_balance())
         self.ui.income_balance.setText(self.conn.total_income())
         self.ui.outcome_balance.setText(self.conn.total_outcome())
@@ -55,6 +57,7 @@ class ExpenseTracker(QMainWindow):
 
         self.conn.add_new_transaction_query(date, category, description, balance, status)
         self.view_data()
+        self.reload_data()
         self.new_window.close()
 
     def edit_current_transaction(self):
@@ -69,6 +72,7 @@ class ExpenseTracker(QMainWindow):
 
         self.conn.update_transaction_query(date, category, description, balance, status, id)
         self.view_data()
+        self.reload_data()
         self.new_window.close()
 
     def delete_current_transaction(self):
@@ -77,6 +81,7 @@ class ExpenseTracker(QMainWindow):
 
         self.conn.delete_transaction_query(id)
         self.view_data()
+        self.reload_data()
 
 
 if __name__ == "__main__":
